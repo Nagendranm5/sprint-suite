@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: nagendranm
+  password: nagendranm5
+  host: localhost
+
+development:
+  <<: *default
+  database: sprint_suite_dev
+
+test:
+  <<: *default
+  database: sprint_suite_test
+
+production:
+  <<: *default
+  database: sprint_suite_production
+  username: sprint_suite
+  password: <%= ENV['sprint_suite_DATABASE_PASSWORD'] %>
